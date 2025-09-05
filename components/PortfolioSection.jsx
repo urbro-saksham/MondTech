@@ -25,6 +25,14 @@ export default function PortfolioSection() {
     return () => observer.disconnect()
   }, [])
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      // setIsMobileMenuOpen(false)
+    }
+  }
+
   const projects = [
     {
       id: 1,
@@ -191,7 +199,9 @@ export default function PortfolioSection() {
                 {/* Results */}
                 <div className="flex items-center justify-between">
                   <span className="text-green-400 text-sm font-medium">{project.results}</span>
-                  <button className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors duration-200">
+                  <button className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors duration-200"
+                  onClick={() => scrollToSection("contact")}
+                  >
                     Learn More →
                   </button>
                 </div>
@@ -207,7 +217,9 @@ export default function PortfolioSection() {
           }`}
         >
           <p className="text-lg text-gray-300 mb-6">Ready to start your next project with us?</p>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+          <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+          onClick={() => scrollToSection("contact")}
+          >
             Start Your Project
           </button>
         </div>

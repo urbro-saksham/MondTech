@@ -23,6 +23,14 @@ export default function ImageCombinationSection() {
     return () => observer.disconnect()
   }, [])
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      // setIsMobileMenuOpen(false)
+    }
+  }
+
   const sections = [
     {
       title: "Strategic IT planning",
@@ -65,7 +73,9 @@ export default function ImageCombinationSection() {
             <div className={`${section.reverse ? "lg:col-start-2" : ""}`}>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{section.title}</h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">{section.description}</p>
-              <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+              <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              onClick={() => scrollToSection("contact")}
+              >
                 {section.buttonText}
               </button>
             </div>

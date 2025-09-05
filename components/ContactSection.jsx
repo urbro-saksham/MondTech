@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react";
 
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -70,10 +70,10 @@ export default function ContactSection() {
   ]
 
   const socials = [
-    { name: "LinkedIn", url: "#", icon: "L" },
-    { name: "Twitter", url: "#", icon: "T" },
-    { name: "GitHub", url: "#", icon: "G" },
-    { name: "Facebook", url: "#", icon: "F" },
+    { name: "LinkedIn", url: "#", icon: "/linkedin.png" },
+    { name: "Twitter", url: "#", icon: "/twitter.jpg" },
+    { name: "Instagram", url: "#", icon: "/instagram.jpeg" },
+    { name: "Facebook", url: "#", icon: "/facebook.png" },
   ]
 
   return (
@@ -81,7 +81,7 @@ export default function ContactSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div
-          className={`text-center mb-12 transition-all duration-1000 ${
+          className={`text-center mb-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -100,7 +100,7 @@ export default function ContactSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-9 mb-8">
             {contactInfo.map((info, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white flex-shrink-0">
@@ -115,19 +115,19 @@ export default function ContactSection() {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-4">
+          {/* <div className="flex justify-center space-x-4">
             {socials.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-110"
+                // className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-110"
               >
-                <span className="text-sm font-medium">{social.icon}</span>
+                <img src={social.icon} alt={social.name} className="w-8 h-8 rounded-sm" />
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

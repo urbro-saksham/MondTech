@@ -24,6 +24,14 @@ export default function ServicesSection() {
     return () => observer.disconnect()
   }, [])
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      // setIsMobileMenuOpen(false)
+    }
+  }
+
   const services = [
     {
       icon: (
@@ -188,7 +196,9 @@ export default function ServicesSection() {
 
                 {/* Learn More Button */}
                 <div className="mt-6">
-                  <button className="text-blue-400 hover:text-blue-300 font-medium text-sm transition-colors duration-300 group-hover:underline">
+                  <button className="text-blue-400 hover:text-blue-300 font-medium text-sm transition-colors duration-300 group-hover:underline"
+                  onClick={() => scrollToSection("contact")}
+                  >
                     Learn More →
                   </button>
                 </div>
@@ -212,7 +222,9 @@ export default function ServicesSection() {
           }`}
         >
           <p className="text-lg text-gray-300 mb-6">Ready to transform your business with our technology solutions?</p>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+          <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+          onClick={() => scrollToSection("contact")}
+          >
             Get Free Consultation
           </button>
         </div>

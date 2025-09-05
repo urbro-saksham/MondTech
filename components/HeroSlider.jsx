@@ -52,6 +52,14 @@ export default function HeroSlider() {
     setCurrentSlide(index)
   }
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      // setIsMobileMenuOpen(false)
+    }
+  }
+
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {slides.map((slide, index) => (
@@ -99,10 +107,14 @@ export default function HeroSlider() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
-                  <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                  <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+                  onClick={() => scrollToSection("contact")}
+                  >
                     {slide.cta}
                   </button>
-                  <button className="border-2 border-white/30 hover:border-teal-400 text-white hover:text-teal-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
+                  <button className="border-2 border-white/30 hover:border-teal-400 text-white hover:text-teal-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
+                  onClick={() => scrollToSection("contact")}
+                    >
                     {slide.secondaryCta}
                   </button>
                 </div>

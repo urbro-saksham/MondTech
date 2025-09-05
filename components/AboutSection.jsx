@@ -24,6 +24,14 @@ export default function AboutSection() {
     return () => observer.disconnect()
   }, [])
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      // setIsMobileMenuOpen(false)
+    }
+  }
+
   const stats = [
     { number: "500+", label: "Projects Completed", icon: "📊" },
     { number: "50+", label: "Happy Clients", icon: "😊" },
@@ -131,7 +139,9 @@ export default function AboutSection() {
             </div>
 
             {/* CTA Button */}
-            <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+            <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+            onClick={() => scrollToSection("contact")}
+            >
               Learn More About Us
             </button>
           </div>

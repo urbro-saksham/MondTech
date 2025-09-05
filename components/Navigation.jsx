@@ -39,12 +39,13 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <div className="flex-shrink-0 group">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white transition-all duration-300 group-hover:scale-105">
-              Tech<span className="text-teal-400 group-hover:text-teal-300">Corp</span>
-            </h1>
-          </div>
-
+        <div className="flex-shrink-0 group">
+          <img
+            src="/mondtech-logo.png"
+            alt="Mondtech Logo"
+            className="h-10 sm:h-12 md:h-14 transition-all duration-300 group-hover:scale-105"
+          />
+        </div>
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-1">
